@@ -1,8 +1,10 @@
-/* FLEXBOX ALIGNMENT AND CENTERING */
+/* FLEXBOX ALIGNMENT AND CENTERING WITH ALIGN-ITEMS */
+
+/* ALIGN ITEMS IS USED TO POSITON ITEMS ON THE CROSS AXIS; default cross-axis is Y axis, main-axis is X for direction: row */
 
 .box {
 	color: white;
-	font-size: 20px;
+	font-size: 100px;
 	text-align: center;
 	text-shadow: 4px 4px 0 rgba(0,0,0,0.1);
 	padding: 10px;
@@ -21,11 +23,32 @@
 
 .container {
 	display: flex;
-	/* space-between means first item at beginning, last item at the end, divy up space between those items and place it around the other grid members */
-
-	/* space-around is similar to space-between, but adds space to the left/right */
-	justify-content: space-between;
-	flex-direction: column;
 	border: 10px solid goldenrod;
+	/* by default, without align-items, these items will stretch to full width */
+
+	/* baseline is used to ensure that text will all be aligned to the same, you guessed it, baseline */
+	align-items: center;
+	flex-direction: column;
+	/* justify-content: center; */
 	min-height: 100vh;
+}
+
+.box1 {
+	font-size: 20px;
+}
+
+.box3 {
+	font-size: 150px;
+}
+
+.box4 {
+	font-size: 200px;
+}
+
+.box5 {
+	font-size: 8px;
+}
+
+.box10 {
+	font-size: 80px;
 }
