@@ -5,11 +5,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 /* Box-sizing border-box */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-/* Flex can be broken into flex-grow, flex-shrink and flex-basis
-flex-grow covers extra space
-flex-shrink covers cases where there isn't enough to space
-flex-basis is the starting point, before shrink or grow begins
- */
+/* How does flex sizing work with wraps? */
 
 .box {
 	color: white;
@@ -32,27 +28,23 @@ flex-basis is the starting point, before shrink or grow begins
 
 .container {
 	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	border: 10px solid goldenrod;
+	height: 100vh;
 }
 
-.box1 {
-	/* ideally, this box would be 400px wide */
-	/* flex-basis: 400px; */
-
-	/* if nothing is set on box2, this will consume the remaining extra room */
-	/* default flex-grow, therefore, is 0 */
-	/* flex-grow: 10; */
-
-	/* default flex shrink is 1 - when not enough room, divide it equally amongst items */
-	/* flex-shrink: 10; */
-
-	/* flex-grow, flex-shrink, flex-basis */
-	/* recommended to use shorthand because browser can use your basis to intelligently infer what the grow/shrink should be */
-	flex:10 5 400px;
+.box {
+	flex-basis: 250px;
+	/* items evenly distributed with flex-grow 1 */
+	flex-grow: 1;
 }
 
-.box2 {
-	/* ...as would this one. */
-	/* flex-basis: 400px; */
-	/* flex-grow: 1; */
-	flex:1 1 400px;
+.box3 {
+	/* this only works on the row where the item is currently located */
+	flex-grow: 5;
+}
+
+.box4 {
+	flex-basis: 100px;
 }
