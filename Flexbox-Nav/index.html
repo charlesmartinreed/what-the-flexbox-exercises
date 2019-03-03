@@ -20,7 +20,7 @@
 			</header>
 
 			<nav class="flex-nav">
-				<a href="#" class="toggleNav">☰Menu</a>
+				<a href="#" class="toggleNav">☰ Menu</a>
 				<ul>
 					<li><a href="#">Item 01</a></li>
 					<li><a href="#">Item 02</a></li>
@@ -68,7 +68,10 @@
 		<script>
 			const flexNav = document.querySelector('.flex-nav').addEventListener('click', function(e){
 				if(e.target.className === 'toggleNav') {
-					console.log('toggle clicked');
+					let next = e.target.nextElementSibling;
+					console.log(next);
+					next.classList.toggle('open');
+					//e.target.classList.toggle('open');
 				}
 				e.preventDefault();
 			});
