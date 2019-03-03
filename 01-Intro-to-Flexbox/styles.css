@@ -17,7 +17,6 @@
 .box9 { background-color: #2ecc71; }
 .box10 { background-color: #16a085; }
 
-/* STEP 2: Set the direction! */
 .container {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -25,16 +24,20 @@
 	border: 10px solid goldenrod;
 	min-height: 100vh;
 
-	/* row is the default flex direction */
-	/* main axis is X, cross axis is Y  */
-	/* flex-direction: row;  */
+	/* GOOD NEWS! Flexbox is a lot more forgiving than float */
+	/* flex-wrap allows us to dictate what happens with spill over */
+	/* where's the height come from? The browser handles the calculations based upon the flow of the items */
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+			/* wrap-reverse wraps AND reverses items along the cross-axis */
+			/* -ms-flex-wrap: wrap-reverse;
+			    flex-wrap: wrap-reverse; */
+}
 
-	/* flex-direction: column  */
-	/* main axis is Y, cross axis is X  */
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-
-	/* good way to remember this - main axis follows the content flow */
+.box {
+	/* with  */
+	width: calc(33.3333333% - 20px);
+	/* you'll note that margin is broken here, it isn't part of the box model */
+	/* padding and border, however, can be calculated when box-sizing is set */
+	padding: 10px;
 }
