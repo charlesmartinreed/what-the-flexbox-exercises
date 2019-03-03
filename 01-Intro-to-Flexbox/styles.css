@@ -6,7 +6,6 @@
 	padding: 10px;
 }
 
-/* these divs become flex items as soon as display flex is set */
 .box1 { background-color: #1abc9c; }
 .box2 { background-color: #3498db; }
 .box3 { background-color: #9b59b6; }
@@ -18,14 +17,24 @@
 .box9 { background-color: #2ecc71; }
 .box10 { background-color: #16a085; }
 
-/* Now... onto flexbox! */
+/* STEP 2: Set the direction! */
 .container {
-	/* Step 1: Set the display to flex */
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	border: 10px solid goldenrod;
-	height: 100vh;
-	/* flex spans the entire width of the screen */
-	/* inline-flex only takes up the width it needs */
+	min-height: 100vh;
+
+	/* row is the default flex direction */
+	/* main axis is X, cross axis is Y  */
+	/* flex-direction: row;  */
+
+	/* flex-direction: column  */
+	/* main axis is Y, cross axis is X  */
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+
+	/* good way to remember this - main axis follows the content flow */
 }
