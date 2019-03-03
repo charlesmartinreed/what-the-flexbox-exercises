@@ -1,9 +1,8 @@
-/* FLEXBOX ORDERING */
-/* MOVE YOUR DOM ELEMENTS WITH TOUCHING YOUR HTML! */
+/* FLEXBOX ALIGNMENT AND CENTERING */
 
 .box {
 	color: white;
-	font-size: 100px;
+	font-size: 20px;
 	text-align: center;
 	text-shadow: 4px 4px 0 rgba(0,0,0,0.1);
 	padding: 10px;
@@ -21,31 +20,12 @@
 .box10 { background-color: #16a085; }
 
 .container {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-}
+	/* space-between means first item at beginning, last item at the end, divy up space between those items and place it around the other grid members */
 
-.box {
-/* flex: 1 means distribute evenly */
-	-webkit-box-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
-	-webkit-box-ordinal-group: 2;
-	    -ms-flex-order: 1;
-	        order: 0;
-}
-
-.box3 {
-	/* default is 0 */
-	/* anything greater 0 is placed at the end of the flex, in sequence*/
-	-webkit-box-ordinal-group: 0;
-	    -ms-flex-order: -1;
-	        order: -1;
-}
-
-.box7 {
-	-webkit-box-ordinal-group: -1;
-	    -ms-flex-order: -2;
-	        order: -2;
+	/* space-around is similar to space-between, but adds space to the left/right */
+	justify-content: space-between;
+	flex-direction: column;
+	border: 10px solid goldenrod;
+	min-height: 100vh;
 }
