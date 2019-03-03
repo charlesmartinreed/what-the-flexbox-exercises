@@ -1,6 +1,6 @@
-/* FLEXBOX ALIGNMENT AND CENTERING WITH ALIGN-ITEMS */
+/* ALIGN-CONTENT, just justify-content, allows us to decide what happens to white space in our flex layout */
 
-/* ALIGN ITEMS IS USED TO POSITON ITEMS ON THE CROSS AXIS; default cross-axis is Y axis, main-axis is X for direction: row */
+/* First, you need a wrap. Second, this only affects the cross axis. */
 
 .box {
 	color: white;
@@ -24,31 +24,14 @@
 .container {
 	display: flex;
 	border: 10px solid goldenrod;
-	/* by default, without align-items, these items will stretch to full width */
+	height: 100vh;
+	flex-wrap: wrap;
 
-	/* baseline is used to ensure that text will all be aligned to the same, you guessed it, baseline */
-	align-items: center;
-	flex-direction: column;
-	/* justify-content: center; */
-	min-height: 100vh;
+	/* default align-content is stretch */
+	align-content: center;
+	justify-content: center;
 }
 
-.box1 {
-	font-size: 20px;
-}
-
-.box3 {
-	font-size: 150px;
-}
-
-.box4 {
-	font-size: 200px;
-}
-
-.box5 {
-	font-size: 8px;
-}
-
-.box10 {
-	font-size: 80px;
+.box {
+	width: 33.333%;
 }
