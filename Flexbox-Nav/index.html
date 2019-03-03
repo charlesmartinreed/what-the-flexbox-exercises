@@ -10,12 +10,17 @@
 
 		<!-- CUSTOM CSS -->
 		<link rel="stylesheet" href="style.css">
-
 		<title>Flexbox-nav</title>
 	</head>
 	<body>
 		<div class="wrapper">
+
+			<header class="top">
+				<h1><a href="#">What The Flexbox?!</a></h1>
+			</header>
+
 			<nav class="flex-nav">
+				<a href="#" class="toggleNav">☰Menu</a>
 				<ul>
 					<li><a href="#">Item 01</a></li>
 					<li><a href="#">Item 02</a></li>
@@ -38,7 +43,37 @@
 				</ul>
 			</nav>
 
+			<section class="hero">
+				<img src="http://lorempixel.com/1000/600/abstract">
+			</section>
+
+			<section class="details">
+				<p>A simple video course to help you master Flexbox.</p>
+				<p>Sign up today to grab all the videos and exercises!</p>
+			</section>
+
+			<section class="signup">
+				<form action="" class="signup">
+					<input type="text" placeholder="Your Name">
+					<input type="email" placeholder="Email Address">
+					<input type="submit" value="Sign me up!">
+				</form>
+			</section>
+
+			<footer>
+				<p>&copy; Charles</p>
+			</footer>
 		</div>
 
+		<script>
+			const flexNav = document.querySelector('.flex-nav').addEventListener('click', function(e){
+				if(e.target.className === 'toggleNav') {
+					console.log('toggle clicked');
+				}
+				e.preventDefault();
+			});
+
+
+		</script>
 	</body>
 </html>
