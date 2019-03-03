@@ -1,3 +1,6 @@
+/* FLEXBOX ORDERING */
+/* MOVE YOUR DOM ELEMENTS WITH TOUCHING YOUR HTML! */
+
 .box {
 	color: white;
 	font-size: 100px;
@@ -21,23 +24,28 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	border: 10px solid goldenrod;
-	min-height: 100vh;
-
-	/* GOOD NEWS! Flexbox is a lot more forgiving than float */
-	/* flex-wrap allows us to dictate what happens with spill over */
-	/* where's the height come from? The browser handles the calculations based upon the flow of the items */
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-			/* wrap-reverse wraps AND reverses items along the cross-axis */
-			/* -ms-flex-wrap: wrap-reverse;
-			    flex-wrap: wrap-reverse; */
 }
 
 .box {
-	/* with  */
-	width: calc(33.3333333% - 20px);
-	/* you'll note that margin is broken here, it isn't part of the box model */
-	/* padding and border, however, can be calculated when box-sizing is set */
-	padding: 10px;
+/* flex: 1 means distribute evenly */
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	-webkit-box-ordinal-group: 2;
+	    -ms-flex-order: 1;
+	        order: 0;
+}
+
+.box3 {
+	/* default is 0 */
+	/* anything greater 0 is placed at the end of the flex, in sequence*/
+	-webkit-box-ordinal-group: 0;
+	    -ms-flex-order: -1;
+	        order: -1;
+}
+
+.box7 {
+	-webkit-box-ordinal-group: -1;
+	    -ms-flex-order: -2;
+	        order: -2;
 }
