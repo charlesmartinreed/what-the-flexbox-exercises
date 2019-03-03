@@ -5,7 +5,11 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 /* Box-sizing border-box */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-/* flex answers the question of what to do with extra space AND what should be done when there isn't enough space */
+/* Flex can be broken into flex-grow, flex-shrink and flex-basis
+flex-grow covers extra space
+flex-shrink covers cases where there isn't enough to space
+flex-basis is the starting point, before shrink or grow begins
+ */
 
 .box {
 	color: white;
@@ -30,16 +34,25 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 	display: flex;
 }
 
-.box {
-	/* flex 1 means everyone should divy remaining space proportionally */
-	flex: 1;
+.box1 {
+	/* ideally, this box would be 400px wide */
+	/* flex-basis: 400px; */
+
+	/* if nothing is set on box2, this will consume the remaining extra room */
+	/* default flex-grow, therefore, is 0 */
+	/* flex-grow: 10; */
+
+	/* default flex shrink is 1 - when not enough room, divide it equally amongst items */
+	/* flex-shrink: 10; */
+
+	/* flex-grow, flex-shrink, flex-basis */
+	/* recommended to use shorthand because browser can use your basis to intelligently infer what the grow/shrink should be */
+	flex:10 5 400px;
 }
 
 .box2 {
-	/* flex 2 means this flex item should have double the space  */
-	flex: 2;
-}
-
-.box5 {
-	flex: 3;
+	/* ...as would this one. */
+	/* flex-basis: 400px; */
+	/* flex-grow: 1; */
+	flex:1 1 400px;
 }
